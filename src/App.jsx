@@ -50,7 +50,7 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.PROD ? '/xoleric' : undefined}>
       <ToastProvider>
         <a className="skip-link" href="#main">
           Asosiy kontentga o‘tish
