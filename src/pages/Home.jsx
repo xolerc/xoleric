@@ -41,7 +41,7 @@ export default function Home() {
             <Reveal delay={0.1}>
               <Link
                 to="/about"
-                className="font-head mt-6 inline-block text-sm font-semibold tracking-wide text-[#c9a86a] uppercase hover:text-[#d0b47c]"
+                className="font-head mt-6 inline-flex min-h-[44px] items-center text-sm font-semibold tracking-wide text-[#c9a86a] uppercase transition-all hover:gap-1 hover:text-[#d0b47c]"
               >
                 Batafsil →
               </Link>
@@ -71,7 +71,7 @@ export default function Home() {
         <Reveal delay={0.1}>
           <Link
             to="/work"
-            className="font-head mt-6 inline-block text-sm font-semibold tracking-wide text-[#c9a86a] uppercase hover:text-[#d0b47c]"
+            className="font-head mt-6 inline-flex min-h-[44px] items-center text-sm font-semibold tracking-wide text-[#c9a86a] uppercase transition-all hover:gap-1 hover:text-[#d0b47c]"
           >
             Barcha ishlar →
           </Link>

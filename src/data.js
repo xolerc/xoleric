@@ -118,7 +118,7 @@ export const apps = [
     id: 'savodhon-flutter',
     name: 'Savodhon Super',
     sub: 'Flutter · offlayn lug‘at',
-    qr: './images/savodhon-flutter-qr.png',
+    qr: 'savodhon-flutter-qr.png',
     apk: 'https://github.com/xolerc/Savodhon/releases/download/v4.1/Savodhon-flutter.apk',
     releases: 'https://github.com/xolerc/Savodhon/releases',
   },

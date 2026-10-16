@@ -140,7 +140,7 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-[3px] bg-[#c9a86a] px-6 py-3.5 font-head text-sm font-semibold tracking-wide text-[#060607] uppercase transition-colors hover:bg-[#d0b47c]"
+                  className="btn-smart w-full rounded-[3px] bg-[#c9a86a] px-6 py-3.5 font-head text-sm font-semibold tracking-wide text-[#060607] uppercase shadow-[0_2px_12px_rgba(201,168,106,0.2)] transition-all hover:bg-[#d0b47c] hover:shadow-[0_8px_28px_rgba(201,168,106,0.3)] active:scale-[0.99] min-h-[52px]"
                 >
                   Yuborish →
                 </button>

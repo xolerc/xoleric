@@ -3,6 +3,7 @@ import SectionHead from '../components/SectionHead.jsx'
 import Reveal from '../components/Reveal.jsx'
 import ContactPanel from '../components/ContactPanel.jsx'
 import Counter from '../components/Counter.jsx'
+import { img } from '../lib/img.js'
 import { aboutBio, aboutLead, blurbs, journey, skills, stats } from '../data.js'
 
 export default function About() {
@@ -24,14 +25,20 @@ export default function About() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <Reveal>
-              <img
-                src="./images/main.webp"
-                alt="Xoleric portreti"
-                loading="lazy"
-                width="640"
-                height="800"
-                className="aspect-[4/5] w-full rounded-[2px] border border-[rgba(242,240,234,0.12)] object-cover grayscale"
-              />
+              <div className="relative overflow-hidden rounded-[6px] border border-[rgba(201,168,106,0.22)] bg-gradient-to-br from-[#1a1a1e] to-[#0e0e11]">
+                <img
+                  src={img('main.webp')}
+                  alt="Xoleric portreti"
+                  loading="lazy"
+                  decoding="async"
+                  width="640"
+                  height="426"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                  }}
+                  className="relative block aspect-[3/2] w-full object-cover object-center grayscale"
+                />
+              </div>
             </Reveal>
             <div className="mt-6 grid grid-cols-3 gap-4 border-t border-[rgba(242,240,234,0.12)] pt-5" aria-label="Statistika">
               {stats.map((s) => (

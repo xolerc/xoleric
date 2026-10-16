@@ -31,7 +31,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="no-print border-t border-[rgba(242,240,234,0.12)]">
+    <footer className="no-print border-t border-[rgba(242,240,234,0.12)] pb-20 md:pb-0">
       <div className="mx-auto max-w-[1200px] px-5 py-10 text-center">
         <div className="flex items-center justify-center gap-3">
           {socials.map(({ label, href, d }) => (
@@ -41,7 +41,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-[2px] border border-[rgba(242,240,234,0.12)] text-[#9b978e] transition-colors hover:border-[#c9a86a] hover:text-[#c9a86a]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-[3px] border border-[rgba(242,240,234,0.12)] text-[#9b978e] transition-all hover:border-[#c9a86a] hover:text-[#c9a86a] active:scale-95"
             >
               <BrandIcon d={d} />
             </a>

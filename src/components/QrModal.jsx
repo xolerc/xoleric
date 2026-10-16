@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import { img } from '../lib/img.js'
 
 export default function QrModal({ open, app, onClose }) {
   const boxRef = useRef(null)
@@ -66,7 +67,7 @@ export default function QrModal({ open, app, onClose }) {
           <X size={18} />
         </button>
         <img
-          src={app.qr}
+          src={img(app.qr)}
           alt={`${app.name} — yuklab olish QR kodi`}
           width="320"
           height="320"

@@ -116,6 +116,157 @@ body {
   }
 }
 
+/* Aqlli UI v2 — touch, skeleton, button, mobil */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+/* iOS zoom oldini olish: input 16px */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+@media (min-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+}
+img {
+  content-visibility: auto;
+}
+
+/* Button tizimi */
+.btn-smart {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+.btn-smart::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+.btn-smart:hover::after {
+  transform: translateX(120%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-smart::after {
+    display: none;
+  }
+}
+.btn-spinner {
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  border: 2px solid rgba(6,6,7,0.3);
+  border-top-color: #060607;
+  animation: btn-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Aqlli skeleton shimmer */
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #141417;
+  border-radius: 2px;
+}
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(201,168,106,0.14) 45%,
+    rgba(242,240,234,0.08) 50%,
+    rgba(201,168,106,0.14) 55%,
+    transparent 80%
+  );
+  animation: skeleton-sweep 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer::after {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+/* Kartalar: ko'tarilish + bosish */
+.card-smart {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.card-smart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.42);
+}
+.card-smart:active {
+  transform: translateY(0) scale(0.99);
+}
+@media (hover: none) {
+  .card-smart:hover {
+    transform: none;
+  }
+}
+
+/* Mobil CTA kirish */
+.mobile-cta {
+  animation: cta-up 0.35s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+@keyframes cta-up {
+  from { transform: translateY(110%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-cta { animation: none; }
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Katta ekranlarda konteyner nafasi */
+@media (min-width: 1280px) {
+  ::-webkit-scrollbar { width: 12px; }
+}
+
+/* Gorizontal chip scroll'da scrollbar yashirish */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* CV print: oq qog'oz */
 @media print {
   body {

@@ -6,4 +6,12 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss()],
+  build: {
+    sourcemap: false,
+    cssMinify: true,
+    chunkSizeWarningLimit: 600,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'lucide-react'],
+  },
 })

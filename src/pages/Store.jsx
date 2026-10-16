@@ -4,6 +4,7 @@ import { Download, Expand } from 'lucide-react'
 import Reveal from '../components/Reveal.jsx'
 import QrModal from '../components/QrModal.jsx'
 import { apps } from '../data.js'
+import { img } from '../lib/img.js'
 
 export default function Store() {
   const [modalApp, setModalApp] = useState(null)
@@ -38,7 +39,7 @@ export default function Store() {
                   className="group relative shrink-0 self-start"
                 >
                   <img
-                    src={app.qr}
+                    src={img(app.qr)}
                     alt={`${app.name} QR kodi`}
                     loading="lazy"
                     width="200"
@@ -58,10 +59,10 @@ export default function Store() {
                     QR ni skanerlang yoki tugma orqali to‘g‘ridan-to‘g‘ri APK ni yuklab oling.
                     Fayl GitHub Releases‘da saqlanadi.
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-3">
+                  <div className="mt-5 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
                     <a
                       href={app.apk}
-                      className="inline-flex items-center gap-2 rounded-[3px] bg-[#c9a86a] px-5 py-2.5 font-head text-[13px] font-semibold tracking-wide text-[#060607] uppercase transition-colors hover:bg-[#d0b47c]"
+                      className="btn-smart inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[3px] bg-[#c9a86a] px-5 py-2.5 font-head text-[13px] font-semibold tracking-wide text-[#060607] uppercase hover:bg-[#d0b47c]"
                     >
                       <Download size={15} />
                       APK yuklash
@@ -70,7 +71,7 @@ export default function Store() {
                       href={app.releases}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-[3px] border border-[rgba(242,240,234,0.25)] px-5 py-2.5 font-head text-[13px] font-semibold tracking-wide text-[#f2f0ea] uppercase transition-colors hover:border-[#c9a86a] hover:text-[#c9a86a]"
+                      className="inline-flex min-h-[52px] items-center justify-center rounded-[3px] border border-[rgba(242,240,234,0.25)] px-5 py-2.5 font-head text-[13px] font-semibold tracking-wide text-[#f2f0ea] uppercase transition-colors hover:border-[#c9a86a] hover:text-[#c9a86a]"
                     >
                       Releases
                     </a>
