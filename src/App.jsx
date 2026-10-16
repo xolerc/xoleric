@@ -6,6 +6,7 @@ import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
 import MobileCTA from './components/MobileCTA.jsx'
 import { ToastProvider } from './components/Toast.jsx'
+import { SITE_BASE } from './lib/site.js'
 
 /* Aqlli code-split: har sahifa alohida chunk — ilk yuklanish yengil */
 const Home = lazy(() => import('./pages/Home.jsx'))
@@ -63,7 +64,7 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.PROD ? '/xoleric' : undefined}>
+    <BrowserRouter basename={SITE_BASE || undefined}>
       <ToastProvider>
         <a className="skip-link" href="#main">
           Asosiy kontentga o‘tish

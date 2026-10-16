@@ -1,11 +1,10 @@
-/* XOLERIC — rasm URL helper.
-   Muammo: "./images/..." nisbiy yo'l /work, /about kabi subroute'larda
-   "/work/images/..." ga aylanib 404 berardi — shuning uchun mobil/ichki
-   sahifalarda rasm chiqmay qolardi.
-   Prod (GitHub Pages /xoleric) va dev uchun to'g'ri baza. */
+/* XOLERIC — rasm URL helper (site.js dagi yagona bazadan).
+   Nisbiy "./images/..." subroute'larda (/work, /about) 404 berardi —
+   shu helper hamma joyda to'g'ri absolut yo'l beradi. */
+import { SITE_BASE } from './site.js'
+
 export function img(file) {
-  const base = import.meta.env.PROD ? '/xoleric/' : '/'
   const clean = String(file || '').replace(/^\.?\//, '')
   const path = clean.startsWith('images/') ? clean : `images/${clean}`
-  return `${base}${path}`
+  return `${SITE_BASE || ''}/${path}`
 }

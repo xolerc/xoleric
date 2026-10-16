@@ -28,7 +28,7 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run build -- --base=/xoleric/
       - name: SPA fallback (deep route reload)
         run: cp dist/index.html dist/404.html
       - name: Upload artifact
